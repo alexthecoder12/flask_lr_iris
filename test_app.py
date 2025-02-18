@@ -25,9 +25,6 @@ def test_index(client):
 
 def test_predict(client):
 	main.load_model() ## load model for predicting ##
-	response = client.post('/results', json={'sepal_length' : 1, 
-										'sepal_width' : 1, 
-										'petal_length' : 1,
-										'petal_width' : 1})
+	response = client.post('/results', json={'sepal_length' : 1, 'sepal_width' : 1, 'petal_length' : 1, 'petal_width' : 1})
 
 	assert response.json == '1'
